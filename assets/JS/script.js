@@ -1,4 +1,6 @@
-var teamArray = ["Denver Broncos", "Kansas City Chiefs", "Los Angeles Chargers", "Oakland Raiders", "Texans", "Colts", "Jaguars", "Titans", "Ravens", "Bengals", "Browns", "Steelers", "Bills", "Dolphins", "Patriots", "Jets", "Cowboys", "Giants", "Eagles", "Redskins", "Bears", "Lions", "Packers", "Vikings", "Falcons", "Panthers", "Saints", "Buccaneers",];
+var teamArray = ["Denver Broncos", "Kansas City Chiefs", "Los Angeles Chargers", "Oakland Raiders", "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Tennessee Titans", "Baltimore Ravens", "Cincinatti Bengals", "Cleveland Browns", "Pittsburgh Steelers", "Buffalo Bills", "Miami Dolphins", "New England Patriots", "New York Jets", "Dallas Cowboys", "New York Giants", "Philadelphia Eagles", "Washington Redskins", "Chicago Bears", "Detroit Lions", "Green Bay Packers", "Minnesota Vikings", "Atlanta Falcons", "Carolina Panthers", "New Orleans Saints", "Tampa Bay Buccaneers",];
+// missing NFC West so those can be added by search field
+
 
 //=================================================================================================================================
 
@@ -7,7 +9,7 @@ function renderButtons() {
 
     for (var i = 0; i < teamArray.length; i++) {
         var button = $("<button>");
-            button.addClass("button");
+            button.addClass("btn btn-primary");
             button.attr("data-name", teamArray[i]);
             button.text(teamArray[i]);
         $("#button-area").append(button);
@@ -16,7 +18,7 @@ function renderButtons() {
 
 renderButtons();
 
-$(".button").on("click", function() {
+$(".btn").on("click", function() {
   $("#gif-area").empty();
     var team = $(this).attr("data-name");
     console.log(team);
