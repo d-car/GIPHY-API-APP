@@ -1,4 +1,4 @@
-var teamArray = ["Broncos", "Chiefs", "Chargers", "Raiders", "Texans", "Colts", "Jaguars", "Titans", "Ravens", "Bengals", "Browns", "Steelers", "Bills", "Dolphins", "Patriots", "Jets", "Cowboys", "Giants", "Eagles", "Redskins", "Bears", "Lions", "Packers", "Vikings", "Falcons", "Panthers", "Saints", "Buccaneers",];
+var teamArray = ["Denver Broncos", "Kansas City Chiefs", "Los Angeles Chargers", "Oakland Raiders", "Texans", "Colts", "Jaguars", "Titans", "Ravens", "Bengals", "Browns", "Steelers", "Bills", "Dolphins", "Patriots", "Jets", "Cowboys", "Giants", "Eagles", "Redskins", "Bears", "Lions", "Packers", "Vikings", "Falcons", "Panthers", "Saints", "Buccaneers",];
 
 //=================================================================================================================================
 
@@ -17,7 +17,9 @@ function renderButtons() {
 renderButtons();
 
 $(".button").on("click", function() {
-    var team = $(this).attr("data-team");
+  $("#gif-area").empty();
+    var team = $(this).attr("data-name");
+    console.log(team);
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=nfl+" + team + "&api_key=YtWIFNouKBztP0svyc6zF5A0mJFrGUSl&limit=10";
 
     $.ajax({
@@ -31,8 +33,8 @@ $(".button").on("click", function() {
           var gifDiv = $("<div class='item'>");
 
           var teamImage = $("<img>");
-          teamImage.attr("src", results[i].data.url);
-          gifDiv.prepend(teamImage);
+          teamImage.attr("src", results[i].images.fixed_height.url);
+          gifDiv.html(teamImage);
 
           $("#gif-area").prepend(gifDiv);
         }
