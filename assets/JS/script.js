@@ -29,16 +29,19 @@ function renderButtons() {
             var results = response.data;
   
             for (var i = 0; i < results.length; i++) {
-              var gifDiv = $("<div class='item'>");
+              var gifDiv = $("<div class='nflGif'>");
   
               var teamImage = $("<img>");
-              teamImage.attr("src", results[i].images.fixed_height.url);
+              teamImage.attr("src", results[i].images.fixed_height_still.url);
+              teamImage.attr("data-state", "still");
               gifDiv.html(teamImage);
   
               $("#gif-area").prepend(gifDiv);
             }
           });
     })
+
+    
 }
 
 // function newTeamButton (); {
@@ -91,6 +94,20 @@ function renderButtons() {
   });
   
 renderButtons();
+
+$(".nflGif").on("click", function() {
+
+  var state = $(this).attr("data-state");
+  if (state === "still") {
+    $(this).attr("data-animate");
+    $(this).attr("data-state", "animate");
+  } else {
+    $(this).attr("data-still");
+    $(this).attr("data-state", "still");
+
+  }
+
+})
 
 
 
