@@ -1,6 +1,7 @@
 body {
     background: url("../Images/background.jpg");
     background-size: 100%;
+    background-repeat: repeat-y;
 }
 
 img {
@@ -10,22 +11,28 @@ img {
     width: 300px;
 }
 
+
+
 .btn {
     margin: 2px;
     float: left;
 }
 
+
 #search-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+    position: relative;
+    left: 350px;
 }
 
 .jumbotron {
     background-color: #fff;
 
+}
+
+#gif-area {
+    position: relative;
+    top: 30px;
+    left: 100px;
 }
 
 
@@ -36,6 +43,7 @@ img {
 .image {
     align-content: center;
 }
+
 
 div#footer {
 	clear: both;

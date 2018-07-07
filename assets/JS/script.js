@@ -1,5 +1,5 @@
 var teamArray = ["Denver Broncos", "Kansas City Chiefs", "Los Angeles Chargers", "Oakland Raiders", "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Tennessee Titans", "Baltimore Ravens", "Cincinatti Bengals", "Cleveland Browns", "Pittsburgh Steelers", "Buffalo Bills", "Miami Dolphins", "New England Patriots", "New York Jets", "Dallas Cowboys", "New York Giants", "Philadelphia Eagles", "Washington Redskins", "Seattle Seahawks", "San Francisco 49ers", "Arizona Cardinals", "Los Angeles Rams", "Atlanta Falcons", "Carolina Panthers", "New Orleans Saints", "Tampa Bay Buccaneers",];
-// missing NFC West so those can be added by search field
+// missing teams so those can be added by search field = Detroit Lions, Chicago Bears, Minnesota Vikings, Green Bay Packers
 var teamImg = $("#teamImg")
 
 //=================================================================================================================================
