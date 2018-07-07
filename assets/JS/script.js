@@ -1,6 +1,6 @@
-var teamArray = ["Denver Broncos", "Kansas City Chiefs", "Los Angeles Chargers", "Oakland Raiders", "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Tennessee Titans", "Baltimore Ravens", "Cincinatti Bengals", "Cleveland Browns", "Pittsburgh Steelers", "Buffalo Bills", "Miami Dolphins", "New England Patriots", "New York Jets", "Dallas Cowboys", "New York Giants", "Philadelphia Eagles", "Washington Redskins", "Chicago Bears", "Detroit Lions", "Green Bay Packers", "Minnesota Vikings", "Atlanta Falcons", "Carolina Panthers", "New Orleans Saints", "Tampa Bay Buccaneers",];
+var teamArray = ["Denver Broncos", "Kansas City Chiefs", "Los Angeles Chargers", "Oakland Raiders", "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Tennessee Titans", "Baltimore Ravens", "Cincinatti Bengals", "Cleveland Browns", "Pittsburgh Steelers", "Buffalo Bills", "Miami Dolphins", "New England Patriots", "New York Jets", "Dallas Cowboys", "New York Giants", "Philadelphia Eagles", "Washington Redskins", "Seattle Seahawks", "San Francisco 49ers", "Arizona Cardinals", "Los Angeles Rams", "Atlanta Falcons", "Carolina Panthers", "New Orleans Saints", "Tampa Bay Buccaneers",];
 // missing NFC West so those can be added by search field
-
+var teamImg = $("#teamImg")
 
 //=================================================================================================================================
 
@@ -31,14 +31,15 @@ function renderButtons() {
             var results = response.data;
 //looping through the results (response.data array, 10 indeces as specified in queryURL) and creating a div for each gif  
             for (var i = 0; i < results.length; i++) {
-              var gifDIV = $("<div class='unit' data-state='still'>");
-              var teamImg = $("<img id= 'teamImg'>");
+              var gifDiv = $("<div>");
+              var teamImg = $("<img>");
 //assigning attributes to both the still and animated versions of the gif for click event later              
-              teamImg.attr("src", results[i].images.fixed_height.url);
-              teamImg.attr({'data-animate' : results[i].images.fixed_height.url});
-              teamImg.attr({"data-state" : "still"});
-              teamImg.attr({'data-still' : results[i].images.fixed_height_still.url});
-              gifDiv.html(teamImg);
+              teamImg.attr("src", results[i].images.fixed_height_still.url);
+              teamImg.attr("data-still", results[i].images.fixed_height_still.url);
+              teamImg.attr("data-animate", results[i].images.fixed_height.url);
+              teamImg.attr("data-state", "still");
+              teamImg.addClass("image");
+              gifDiv.append(teamImg);
 //prepends to gif div  
               $("#gif-area").prepend(gifDiv);
             }
@@ -59,22 +60,23 @@ $("#add-gif").on("click", function(event) {
 });
 
 //trying to pause/play gifs on click
-$(".unit").on("click", function() {
+$(document).on("click", ".image", function() {
+  var state = $(this).attr("data-state");
 
-  var state = $(this).attr('data-state');
-    
-    if (state === "still") {
-    $(this).attr("src", $(this).attr("data-animate"));
-    $(this).attr("data-state", "animate");
-    } else {
-    $(this).attr("src", $(this).attr("data-still"));
-    $(this).attr("data-state", "still");
-    }
-  });
+  if (state === "still") {
+  $(this).attr("src", $(this).data("animate"));
+  $(this).attr("data-state", "animate");
+  } else {
+  $(this).attr("src", $(this).data("still"));
+  $(this).attr("data-state", "still");
+  }
+  
+});
 
   
 //render buttons on page load  
 renderButtons();
+console.log(teamImg)
 
 
 
