@@ -1,0 +1,55 @@
+body {
+    background: url("../Images/background.jpg");
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+
+img {
+    float: left;
+    padding: 2px;
+    height: 200px;
+    width: 300px;
+}
+
+
+
+.btn {
+    margin: 2px;
+    float: left;
+}
+
+
+#search-form {
+    position: relative;
+    left: 350px;
+}
+
+.jumbotron {
+    background-color: #fff;
+
+}
+
+#gif-area {
+    position: relative;
+    top: 30px;
+    left: 100px;
+}
+
+
+#button-area {
+    background-color: #fff;
+}
+
+.image {
+    align-content: center;
+}
+
+
+div#footer {
+	clear: both;
+	margin-top: 40px;
+	position: center;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+}
