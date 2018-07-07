@@ -11,25 +11,50 @@
 </head>
 
 <body>
+<!-- Header -->
+  <div class="jumbotron">
+      <div class="container">
+          <h1>NFL GIF Search</h1>
+      </div>
+  </div>
 
   <div class="container">
-    <h1>NFL GIF Search</h1>
+    
 
-<!-- GIF display -->
-    <div id="gif-area"></div>
 
-<!-- Dynamic Buttons -->
-    <div id="button-area"></div>
-
-    <form id="search-form">
-      <label for="search-input">Search for GIF</label>
-      <input type="text" id="search-input">
-      <br>
-
+    <!-- Dynamic Buttons -->
+    <div class="row">
+      <div class="col-xs-12 col-s-12 col-m-12 col-lg-12">
+        <div id="button-area"></div>
+      </div>
+    </div>
+    <br>
+  
+    <div class="row">
+      <div class="col-xs-12 col-s-12 col-m-12 col-lg-12 search-form">
+        <form id="search-form">
+          <label for="search-input">Search for GIF</label>
+          <input type="text" id="search-input">
+        
 <!-- Add Buttons -->
-      <input id="add-gif" type="submit" value="Search GIFs">
-    </form>
+          <input id="add-gif" type="submit" value="Search GIFs">
+        </form>
+      </div>
+    </div>
+
+    <!-- GIF display -->
+    <div class="row">
+        <div class="col-xs-12 col-s-12 col-m-12 col-lg-12">
+          <div id="gif-area"></div>
+          <br><br>
+        </div>
+    </div>
+
+<footer>
+  <div id="footer" class="container">
+    <h4 id="copyright">&copy; Copyright 2018 Dan Carstensen</h4>
   </div>
+</footer>
 
     
   <script src="assets/JS/script.js"></script>

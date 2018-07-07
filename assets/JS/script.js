@@ -20,7 +20,7 @@ function renderButtons() {
       $("#gif-area").empty();
         var team = $(this).attr("data-name");
         console.log(team);
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=nfl+" + team + "&api_key=YtWIFNouKBztP0svyc6zF5A0mJFrGUSl&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=nfl+" + team + "&api_key=YtWIFNouKBztP0svyc6zF5A0mJFrGUSl&limit=12";
 //ajax call to giphy API  
         $.ajax({
           url: queryURL,

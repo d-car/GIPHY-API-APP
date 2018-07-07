@@ -1,3 +1,47 @@
-.btn-primary {
-    margin: 2px
+body {
+    background: url("../Images/background.jpg");
+    background-size: 100%;
+}
+
+img {
+    float: left;
+    padding: 2px;
+    height: 200px;
+    width: 300px;
+}
+
+.btn {
+    margin: 2px;
+    float: left;
+}
+
+#search-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.jumbotron {
+    background-color: #fff;
+
+}
+
+
+#button-area {
+    background-color: #fff;
+}
+
+.image {
+    align-content: center;
+}
+
+div#footer {
+	clear: both;
+	margin-top: 40px;
+	position: center;
+	bottom: 0;
+	left: 0;
+	text-align: center;
 }
